@@ -4,8 +4,8 @@ export default function Layout({ children }) {
   return (
     <div className="mx-14">
       <Nav />
-      {/* */}
-      <main  className="flex justify-center items-center w-full">{children}</main>
+      {/*    flex justify-center items-center w-full"*/}
+      <main  className="flex min-h-screen flex-col justify-between ">{children}</main>
     </div>
   );
 }
