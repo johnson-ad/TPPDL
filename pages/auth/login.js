@@ -33,7 +33,7 @@ export default function Login() {
   };
 
 
-// const auth = getAuth(firebase_app);
+const auth = getAuth(firebase_app);
 
  async function signIn(email, password) {
     let result = null,
@@ -123,13 +123,13 @@ export default function Login() {
 
 
 
-  useEffect(() => {
-    if (user) {
-      route.push("/dashboard");
-    } else {
-      console.log("login");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     route.push("/dashboard");
+  //   } else {
+  //     console.log("login");
+  //   }
+  // }, [user]);
 
   return (
     <div className="shadow-xl mt-12 p-10 text-gray-700 rounded-lg w-96">
@@ -170,7 +170,7 @@ export default function Login() {
       </div>
       <hr/>
       <h3 className="text-3xl font-medium">Or Sign in with email</h3>
-      <div>
+      {/* <div>
         <div className="form-wrapper">
             <h1>Connexion</h1>
             <form onSubmit={handleForm} className="form space-y-6">
@@ -190,7 +190,7 @@ export default function Login() {
             </form>
         </div>
 
-    </div>
+    </div> */}
     </div>
   );
 }

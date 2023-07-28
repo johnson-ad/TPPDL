@@ -2,14 +2,21 @@ import Link from "next/link";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../utils/firebase";
 import { BiStopwatch } from "react-icons/bi";
+import Image from "next/image";
+import isi from "../public/images/isi.jpg"
 
 
 export default function Nav() {
   const [user, loading] = useAuthState(auth);
 
   return (
-    <nav className="flex justify-between items-center py-10">
-      <Link href="/"><span className="flex justify-center items-center ">days<BiStopwatch size={40}/></span></Link>
+    <nav className="flex justify-between items-center py-9">
+      <Link href="/"><span className="flex justify-center items-center "><Image 
+      src={isi} 
+      width={40} 
+      height={40} 
+      fill
+      alt="Picture of logo" /></span></Link>
       <ul className="flex items-center gap-10">
         <a className="text-lg font-medium" href="#">
           Poste

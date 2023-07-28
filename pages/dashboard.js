@@ -60,7 +60,7 @@ export default function Dashboard() {
               </button>
             </form>
           </div>
-          <div className="flex flex-col bg-zinc-800">
+          <div className="flex flex-col  ">
             {task.map((t,index) => (
               <li key={index}>{t.task}</li>
             ))}

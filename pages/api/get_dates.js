@@ -9,8 +9,6 @@ export default async function handler(req, res) {
         res.status(405).send({msg : "Only get request are alloweded"})
     }
 
-    const { task } = req.body
-
     try {
         await connectMongoDB()
         const tasks = await Task.find()
