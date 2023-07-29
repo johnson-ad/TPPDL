@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../utils/firebase";
-import { BiStopwatch } from "react-icons/bi";
 import Image from "next/image";
 import isi from "../public/images/isi.jpg"
 

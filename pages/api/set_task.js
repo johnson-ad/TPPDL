@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
     try {
         await connectMongoDB()
-        Task.create({task}).then((data)=>{ 
+        Task.create({task, comment}).then((data)=>{ 
         console.log(data);
         res.status(201).send(data)})
     } catch (error) {

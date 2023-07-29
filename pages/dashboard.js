@@ -37,17 +37,17 @@ export default function Dashboard() {
   if (!user) route.push("/auth/login");
   if (user)
     return (
-      //shadow-xl mt-5 flex flex-col p-5 text-gray-700 rounded-lg
-      <div className="container m-auto mt-4 px-4 ">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 mt-10">
-          <div className="flex flex-col gap-2">
-            <h1>
+      
+      <div className=" mt-10 px-4 flex flex-col items-center w-fill">
+        <div className="shadow-xl mt-5 flex flex-col p-5 text-gray-700 rounded-lg">
+            <h1 className=" text-2xl mb-2 ">
               Welcome to your dashboard{" "}
-              <span className="font-bold">{user.displayName}</span>
+              <span className="font-bold text-blue-500">{user.displayName}</span>
             </h1>
+          <div className="flex flex-col gap-2">
             <form onSubmit={handleSubmit} className="flex flex-col gap-2 ">
               <input
-                type="text"
+                type="date"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="form-input px-3 py-2 rounded-full"
@@ -60,18 +60,23 @@ export default function Dashboard() {
               </button>
             </form>
           </div>
+          <div>
           <div className="flex flex-col  ">
             {task.map((t,index) => (
               <li key={index}>{t.task}</li>
             ))}
           </div>
-        </div>
-        <button
+          </div>
+          <div>
+          <button
           className="text-white bg-red-700 p-3 mt-3  w-50 font-medium rounded-lg flex align-middle gap-2 "
           onClick={() => auth.signOut()}
         >
           Sign out
         </button>
+          </div>
+        </div>
+        
       </div>
     );
 }
